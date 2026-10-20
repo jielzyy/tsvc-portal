@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TSVC Member Portal - Transaction Service Flow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page flex flex-col items-center justify-center min-h-screen p-4 sm:p-8">
+
+  <!-- Main Portal Card Screen -->
+  <div class="w-full max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-sky-900 text-white px-6 py-4 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <!-- Official Town Square Vendors Cooperative Seal Logo SVG -->
+        <div class="w-11 h-11 rounded-full bg-emerald-800 flex items-center justify-center p-0.5 shadow-inner border border-emerald-600 flex-shrink-0">
+          <svg viewBox="0 0 200 200" class="w-full h-full rounded-full" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background circle -->
+            <circle cx="100" cy="100" r="96" fill="#f4efe6" stroke="#1f4e3d" stroke-width="6"/>
+            <circle cx="100" cy="100" r="84" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+
+            <!-- Central Town Hall Building & Carts -->
+            <g fill="#1f4e3d">
+              <!-- Building Base / Columns -->
+              <rect x="70" y="105" width="60" height="25" />
+              <rect x="75" y="75" width="50" height="30" />
+              <polygon points="65,75 100,50 135,75" />
+              <!-- Tower / Bell Cupola -->
+              <rect x="90" y="32" width="20" height="22" />
+              <path d="M 90 32 L 100 20 L 110 32 Z" />
+              <circle cx="100" cy="40" r="3" fill="#f4efe6" />
+              <!-- Windows/Details -->
+              <rect x="80" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="92" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="104" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="112" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="100" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="88" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="76" y="112" width="6" height="15" fill="#f4efe6" />
+              <!-- Vendor Carts -->
+              <rect x="83" y="138" width="14" height="8" rx="1" />
+              <circle cx="86" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <circle cx="94" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <rect x="113" y="138" width="14" height="8" rx="1" />
+              <circle cx="116" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <circle cx="124" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight">TSVC Member Portal</h1>
+          <p class="text-xs text-sky-200">Town Square Vendors Cooperative</p>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-sky-100">
+        <a href="TSVC-Member-Dashboard.html" class="nav-link hover:text-amber-300 transition-colors" data-nav>Dashboard</a>
+        <a href="TSVC-Loan-Application.html" class="nav-link hover:text-amber-300 transition-colors" data-nav>Loans</a>
+        <a href="TSVC-Management-Dashboard.html" class="nav-link hover:text-amber-300 transition-colors text-amber-300" data-nav>Account Settings</a>
+        <a href="TSVC-Member-Registration-Login.html" class="bg-sky-800 hover:bg-sky-700 text-amber-300 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors btn-press" data-nav>Logout</a>
+      </nav>
+      <div class="mobile-menu-panel md:hidden" id="mobile-menu">
+        <a href="TSVC-Member-Dashboard.html" data-nav>Dashboard</a>
+        <a href="TSVC-Loan-Application.html" data-nav>Loans</a>
+        <a href="TSVC-Management-Dashboard.html" data-nav>Account Settings</a>
+        <a href="TSVC-Member-Registration-Login.html" data-nav class="mt-2 pt-2 border-t border-slate-700/30">Logout</a>
+      </div>
+    </header>
+
+    <!-- Sub Header Banner -->
+    <div class="bg-slate-100 border-b border-slate-200 px-6 py-3 flex justify-between items-center">
+      <div>
+        <h2 class="text-lg font-bold text-slate-800 uppercase tracking-wide">Transaction Service Flow</h2>
+        <p class="text-xs text-slate-500">Track your transaction progress in real-time</p>
+      </div>
+      <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-emerald-300">
+        ACTIVE TRANSACTION
+      </span>
+    </div>
+
+    <!-- Transaction Flow Content -->
+    <div class="p-6">
+      <!-- Transaction Info -->
+      <div class="mb-6 p-4 hover-lift bg-slate-50 border border-slate-200 rounded-lg reveal">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Transaction ID</span>
+          <span class="text-sm font-mono font-bold text-sky-900">TSVC-TXN-2026-10-18-0045</span>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Transaction Type</span>
+          <span class="text-sm font-semibold text-slate-700">Share Capital Deposit</span>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Amount</span>
+          <span class="text-sm font-semibold text-emerald-600">₱10,000.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Initiated</span>
+          <span class="text-sm font-semibold text-slate-700">Today, 2:30 PM</span>
+        </div>
+      </div>
+
+      <!-- Service Flow Steps -->
+      <div class="space-y-5 reveal">
+        <!-- Step 1: Request -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">
+            1
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-slate-800">REQUEST</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800 rounded">ACTIVE</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Member has submitted a transaction request through the portal. The request includes all necessary details and documentation.
+            </p>
+            <div class="mt-2 flex items-center space-x-2 text-xs">
+              <span class="font-medium text-slate-700">Submitted:</span> Today, 2:30 PM
+            </div>
+          </div>
+        </div>
+
+        <!-- Step Divider -->
+        <div class="flex items-center space-x-2 my-4">
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+          <span class="text-xs text-slate-400">→</span>
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+        </div>
+
+        <!-- Step 2: Verification -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">
+            2
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-slate-800">VERIFICATION</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800 rounded">ACTIVE</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Cooperative staff are reviewing the submitted documents and validating member eligibility. This includes checking membership status, document authenticity, and regulatory compliance.
+            </p>
+            <div class="mt-2 flex items-center space-x-2 text-xs">
+              <span class="font-medium text-slate-700">Started:</span> Today, 2:35 PM
+            </div>
+          </div>
+        </div>
+
+        <!-- Step Divider -->
+        <div class="flex items-center space-x-2 my-4">
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+          <span class="text-xs text-slate-400">→</span>
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+        </div>
+
+        <!-- Step 3: Approval -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold">
+            3
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-slate-800">APPROVAL</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-sky-100 text-sky-800 rounded">PENDING</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Transaction awaits final approval from authorized signatories. This step ensures that all cooperative policies are followed and that the transaction aligns with TSVC's financial guidelines.
+            </p>
+            <div class="mt-2 flex items-center space-x-2 text-xs">
+              <span class="font-medium text-slate-700">Estimated:</span> Within 2 hours
+            </div>
+          </div>
+        </div>
+
+        <!-- Step Divider -->
+        <div class="flex items-center space-x-2 my-4">
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+          <span class="text-xs text-slate-400">→</span>
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+        </div>
+
+        <!-- Step 4: Processing -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold">
+            4
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-slate-800">PROCESSING</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-slate-100 text-slate-500 rounded">UPCOMING</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Once approved, the transaction will be processed through our secure banking systems. Funds will be transferred and transaction records updated in real-time.
+            </p>
+            <div class="mt-2 flex items-center space-x-2 text-xs">
+              <span class="font-medium text-slate-700">Estimated:</span> Within 4 hours
+            </div>
+          </div>
+        </div>
+
+        <!-- Step Divider -->
+        <div class="flex items-center space-x-2 my-4">
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+          <span class="text-xs text-slate-400">→</span>
+          <div class="h-0.5 w-10 bg-slate-200"></div>
+        </div>
+
+        <!-- Step 5: Completion -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold">
+            5
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-slate-800">COMPLETION</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-slate-100 text-slate-500 rounded">UPCOMING</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Transaction is complete and funds have been successfully transferred. Member will receive confirmation via email/SMS and the transaction will appear in their account history.
+            </p>
+            <div class="mt-2 flex items-center space-x-2 text-xs">
+              <span class="font-medium text-slate-700">Estimated:</span> Within 6 hours
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 pt-6 border-t border-slate-200">
+        <div class="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
+          <button class="w-full sm:w-auto px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors font-medium btn-press" data-toast="Opening transaction details...">
+            View Details
+          </button>
+          <button class="w-full sm:w-auto px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700 transition-colors font-medium btn-press" data-toast="Receipt downloaded.">
+            Download Receipt
+          </button>
+          <button class="w-full sm:w-auto px-4 py-2 bg-slate-600 text-white rounded-md hover:bg-slate-700 transition-colors font-medium btn-press" data-toast="Transaction shared.">
+            Share Transaction
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 px-6 py-3 text-center text-xs text-slate-400">
+      Town Square Vendors Cooperative Member Portal System &copy; 2026. All rights reserved.
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>

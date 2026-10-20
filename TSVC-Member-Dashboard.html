@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TSVC Member Portal - Management Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page flex flex-col items-center justify-center min-h-screen p-4 sm:p-8">
+
+  <!-- Main Portal Card Screen -->
+  <div class="w-full max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-sky-900 text-white px-6 py-4 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <!-- Official Town Square Vendors Cooperative Seal Logo SVG -->
+        <div class="w-11 h-11 rounded-full bg-emerald-800 flex items-center justify-center p-0.5 shadow-inner border border-emerald-600 flex-shrink-0">
+          <svg viewBox="0 0 200 200" class="w-full h-full rounded-full" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background circle -->
+            <circle cx="100" cy="100" r="96" fill="#f4efe6" stroke="#1f4e3d" stroke-width="6"/>
+            <circle cx="100" cy="100" r="84" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+
+            <!-- Central Town Hall Building & Carts -->
+            <g fill="#1f4e3d">
+              <!-- Building Base / Columns -->
+              <rect x="70" y="105" width="60" height="25" />
+              <rect x="75" y="75" width="50" height="30" />
+              <polygon points="65,75 100,50 135,75" />
+              <!-- Tower / Bell Cupola -->
+              <rect x="90" y="32" width="20" height="22" />
+              <path d="M 90 32 L 100 20 L 110 32 Z" />
+              <circle cx="100" cy="40" r="3" fill="#f4efe6" />
+              <!-- Windows/Details -->
+              <rect x="80" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="92" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="104" y="83" width="8" height="15" fill="#f4efe6" />
+              <rect x="112" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="100" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="88" y="112" width="6" height="15" fill="#f4efe6" />
+              <rect x="76" y="112" width="6" height="15" fill="#f4efe6" />
+              <!-- Vendor Carts -->
+              <rect x="83" y="138" width="14" height="8" rx="1" />
+              <circle cx="86" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <circle cx="94" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <rect x="113" y="138" width="14" height="8" rx="1" />
+              <circle cx="116" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+              <circle cx="124" cy="148" r="3" fill="#1f4e3d" stroke="#f4efe6" stroke-width="1" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight">TSVC Member Portal</h1>
+          <p class="text-xs text-sky-200">Town Square Vendors Cooperative</p>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-sky-100">
+        <a href="TSVC-Member-Dashboard.html" class="nav-link hover:text-amber-300 transition-colors" data-nav>Dashboard</a>
+        <a href="TSVC-Loan-Application.html" class="nav-link hover:text-amber-300 transition-colors" data-nav>Loans</a>
+        <a href="TSVC-Management-Dashboard.html" class="nav-link hover:text-amber-300 transition-colors" data-nav>Account Settings</a>
+        <a href="TSVC-Member-Registration-Login.html" class="bg-sky-800 hover:bg-sky-700 text-amber-300 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors btn-press" data-nav>Logout</a>
+      </nav>
+      <div class="mobile-menu-panel md:hidden" id="mobile-menu">
+        <a href="TSVC-Member-Dashboard.html" data-nav>Dashboard</a>
+        <a href="TSVC-Loan-Application.html" data-nav>Loans</a>
+        <a href="TSVC-Management-Dashboard.html" data-nav>Account Settings</a>
+        <a href="TSVC-Member-Registration-Login.html" data-nav class="mt-2 pt-2 border-t border-slate-700/30">Logout</a>
+      </div>
+    </header>
+
+    <!-- Sub Header Banner -->
+    <div class="bg-slate-100 border-b border-slate-200 px-6 py-3 flex justify-between items-center">
+      <div>
+        <h2 class="text-lg font-bold text-slate-800 uppercase tracking-wide">Management Dashboard</h2>
+        <p class="text-xs text-slate-500">Administrative Overview - TSVC Cooperative</p>
+      </div>
+      <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-emerald-300">
+        ADMIN VIEW
+      </span>
+    </div>
+
+    <!-- Management Dashboard Content -->
+    <div class="p-6">
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 reveal">
+        <!-- Total Members -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Members</span>
+            <span class="text-xs text-sky-600">▲ 3.2% this month</span>
+          </div>
+          <p class="text-2xl font-bold text-sky-900">1,247</p>
+          <p class="text-xs text-slate-500">Active members</p>
+        </div>
+
+        <!-- Active Loans -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Loans</span>
+            <span class="text-xs text-sky-600">▲ 8.7% this month</span>
+          </div>
+          <p class="text-2xl font-bold text-sky-900">89</p>
+          <p class="text-xs text-slate-500">Currently outstanding</p>
+        </div>
+
+        <!-- Monthly Transactions -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Monthly Transactions</span>
+            <span class="text-xs text-sky-600">▲ 12.4% this month</span>
+          </div>
+          <p class="text-2xl font-bold text-sky-900">₱2.4M</p>
+          <p class="text-xs text-slate-500">Total volume</p>
+        </div>
+
+        <!-- Pending Approvals -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pending Approvals</span>
+            <span class="text-xs text-emerald-600">▲ 5 new today</span>
+          </div>
+          <p class="text-2xl font-bold text-emerald-600">12</p>
+          <p class="text-xs text-slate-500">Requiring review</p>
+        </div>
+      </div>
+
+      <!-- Charts and Reports -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <!-- Loan Portfolio Chart -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Loan Portfolio Distribution</h3>
+          <div class="h-40 flex items-end space-x-4">
+            <!-- Loan Portfolio Bar Chart -->
+            <div class="flex-1 flex flex-col items-center justify-end gap-1">
+              <div class="w-full h-[35%] bg-emerald-500 rounded-t-lg"></div>
+              <span class="text-[10px] font-bold text-emerald-600">35%</span>
+              <span class="text-[10px] text-slate-400">Personal</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end gap-1">
+              <div class="w-full h-[55%] bg-sky-500 rounded-t-lg"></div>
+              <span class="text-[10px] font-bold text-sky-600">45%</span>
+              <span class="text-[10px] text-slate-400">Business</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end gap-1">
+              <div class="w-full h-[20%] bg-amber-500 rounded-t-lg"></div>
+              <span class="text-[10px] font-bold text-amber-600">15%</span>
+              <span class="text-[10px] text-slate-400">Agricultural</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-end gap-1">
+              <div class="w-full h-[10%] bg-violet-500 rounded-t-lg"></div>
+              <span class="text-[10px] font-bold text-violet-600">5%</span>
+              <span class="text-[10px] text-slate-400">Emergency</span>
+            </div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500 text-center">
+            As of October 2026 • Total Portfolio: ₱45.2M
+          </p>
+        </div>
+
+        <!-- Member Growth Chart -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Member Growth Trend</h3>
+          <div class="h-40 relative">
+            <!-- Member Growth Area Chart -->
+            <div class="absolute inset-0 bg-slate-200 h-0.5"></div>
+            <div class="absolute bottom-0 left-0 h-full w-full bg-gradient-to-t from-emerald-500 to-transparent opacity-20"></div>
+            <div class="absolute bottom-0 left-0 h-[30%] w-[16%] bg-emerald-500 rounded-t"></div>
+            <div class="absolute bottom-0 left-[16%] h-[45%] w-[16%] bg-emerald-400 rounded-t"></div>
+            <div class="absolute bottom-0 left-[32%] h-[60%] w-[16%] bg-emerald-300 rounded-t"></div>
+            <div class="absolute bottom-0 left-[48%] h-[50%] w-[16%] bg-emerald-200 rounded-t"></div>
+            <div class="absolute bottom-0 left-[64%] h-[70%] w-[16%] bg-emerald-500 rounded-t"></div>
+            <div class="absolute bottom-0 left-[80%] h-[55%] w-[20%] bg-emerald-400 rounded-t"></div>
+            <div class="mt-2 flex justify-between text-xs text-slate-500">
+              <span>Jan</span>
+              <span>Mar</span>
+              <span>May</span>
+              <span>Jul</span>
+              <span>Sep</span>
+            </div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500 text-center">
+            Year-over-Year Growth: +18.3%
+          </p>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Recent Transactions -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Recent Transactions</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-white border border-slate-200 rounded-lg">
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-slate-800">Share Capital Deposit</p>
+                <p class="text-xs text-slate-500">TSVC-TXN-2026-10-18-0045 • ₱10,000.00</p>
+              </div>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800 rounded">Completed</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-white border border-slate-200 rounded-lg">
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-slate-800">Loan Payment</p>
+                <p class="text-xs text-slate-500">TSVC-TXN-2026-10-18-0044 • ₱2,500.00</p>
+              </div>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-sky-100 text-sky-800 rounded">Processing</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-white border border-slate-200 rounded-lg">
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-slate-800">New Membership</p>
+                <p class="text-xs text-slate-500">TSVC-TXN-2026-10-18-0043 • Share Capital</p>
+              </div>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 rounded">Pending Approval</span>
+            </div>
+          </div>
+          <p class="mt-3 text-center">
+            <a href="TSVC-Transaction-Service-Flow.html" class="text-sm text-sky-600 hover:text-sky-800 font-medium" data-nav>View All Transactions</a>
+          </p>
+        </div>
+
+        <!-- Alerts & Notifications -->
+        <div class="hover-lift bg-slate-50 border border-slate-200 rounded-lg p-4 reveal">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Management Alerts</h3>
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3 p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
+              <div class="flex-shrink-0">
+                <span class="w-5 h-5 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xs font-bold">!</span>
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-emerald-800">Loan Approval Backlog</p>
+                <p class="text-xs text-emerald-600">5 loans pending review for over 24 hours</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 p-3 bg-sky-50 border border-sky-200 rounded-lg">
+              <div class="flex-shrink-0">
+                <span class="w-5 h-5 bg-sky-500 text-white rounded-full flex items-center justify-center text-xs font-bold">📊</span>
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-sky-800">Monthly Report Due</p>
+                <p class="text-xs text-sky-600">Financial statement preparation scheduled for tomorrow</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+              <div class="flex-shrink-0">
+                <span class="w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-xs font-bold">⚠️</span>
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs font-bold text-amber-800">Member Concern</p>
+                <p class="text-xs text-amber-600">Query about interest rate calculation needs response</p>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 text-center">
+            <a href="#" class="text-sm text-sky-600 hover:text-sky-800 font-medium" data-toast="Opening alert management...">Manage All Alerts</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 px-6 py-3 text-center text-xs text-slate-400">
+      Town Square Vendors Cooperative Member Portal System &copy; 2026. All rights reserved.
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
